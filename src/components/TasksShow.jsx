@@ -1,20 +1,23 @@
 import { useState } from 'react';
 import TaskCreate from './TaskCreate';
 
+//Başka bir jsx'etask, onDelete ve onUpdate gönderir.
 function TaskShow({ task, onDelete, onUpdate }) {
   const [showEdit, setShowEdit] = useState(false);
   const handleDeleteClick = () => {
     onDelete(task.id);
   };
+  //Bu fonk. çağırıldığında showEdit'in tersi set edilir. (Görünürlük/Görünmezliği ayarlar)
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
+  //
   const handleSubmit = (id, updatedTitle, updatedTaskDesc) => {
     setShowEdit(false);
     onUpdate(id, updatedTitle, updatedTaskDesc);
   };
 
-  console.log(task);
+
   return (
     <div className="task-show">
       {showEdit ? (

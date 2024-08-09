@@ -1,4 +1,6 @@
 import TasksShow from "./TasksShow";
+//Başka bir jsx'e tasks, onDelete, onUpdate gönderir.
+//3 prop alır
 const TaskList = ({tasks,onDelete, onUpdate})=>{
     return(
         //<form action=""></form>
